@@ -137,7 +137,7 @@ Existing products cleared
 
 ---
 
-## ▶️ Run the Backend Server
+## Run the Backend Server
 
 ### Development mode
 
@@ -286,7 +286,7 @@ curl -X DELETE http://localhost:5001/products/favorite/PRODUCT_ID
 
 ---
 
-## 📌 Summary
+## Summary
 
 This project demonstrates:
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>E-Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <!-- Header -->
+    <header class="bg-white shadow p-4">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1
+          class="text-2xl font-bold text-center cursor-pointer"
+          onclick="window.location.href='index.html'"
+        >
+          E-Commerce Store
+        </h1>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main
+      class="max-w-7xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-12 gap-8 px-4"
+    >
+      <!-- Filters -->
+      <aside
+        class="col-span-1 md:col-span-3 bg-white p-4 rounded-2xl shadow-lg"
+      >
+        <h2 class="font-semibold mb-3">Filters</h2>
+
+        <div class="mb-4">
+          <h3 class="font-medium">Brand</h3>
+          <div id="brandFilters" class="space-y-1 text-sm"></div>
+        </div>
+
+        <div>
+          <h3 class="font-medium">Type</h3>
+          <div id="typeFilters" class="space-y-1 text-sm"></div>
+        </div>
+      </aside>
+
+      <!-- Products -->
+      <section class="col-span-1 md:col-span-6">
+        <div
+          id="productsGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        ></div>
+
+        <!-- Pagination -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center gap-3 mt-6"
+        >
+          <button
+            id="prevBtn"
+            class="w-full sm:w-auto px-4 py-2 bg-gray-300 rounded disabled:opacity-50 text-center"
+          >
+            Previous
+          </button>
+          <button
+            id="nextBtn"
+            class="w-full sm:w-auto px-4 py-2 bg-gray-300 rounded disabled:opacity-50 text-center"
+          >
+            Next
+          </button>
+        </div>
+      </section>
+
+      <!-- Favorites -->
+      <aside
+        class="col-span-1 md:col-span-3 bg-white p-4 rounded-2xl shadow-lg"
+      >
+        <h2 class="font-semibold mb-3 text-blue-700">Favorites</h2>
+        <ul id="favoritesList" class="space-y-3 text-sm"></ul>
+      </aside>
+    </main>
+    <script type="module" src="./js/home.js"></script>
+  </body>
+</html>

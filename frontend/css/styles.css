@@ -1,0 +1,166 @@
+main {
+  padding-bottom: 3rem;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+
+/* Prevent horizontal scroll from transforms or large shadows */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Use border-box everywhere to make widths predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  padding: 1rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.14);
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms ease;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+  border-color: #2563eb;
+}
+
+/* Favorite card image */
+.favorite-img {
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+/* Ensure images don't overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent card hover from causing overflow */
+.card {
+  overflow: hidden;
+}
+
+/* Subtle fade-in for cards */
+.card,
+.favorite-img {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Custom header */
+.header-title {
+  letter-spacing: -0.5px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+/* Small utility */
+.muted {
+  color: #6b7280;
+}
+.price {
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* Heart button styles */
+.heart-btn {
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.heart-icon {
+  display: block;
+}
+.heart-filled {
+  filter: drop-shadow(0 4px 8px rgba(239, 68, 68, 0.12));
+}
+
+/* Favorites sidebar cards - make each favorite stand out from the sidebar */
+#favoritesList li {
+  background: #f8fbff;
+  border: 1px solid #e6eefc;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#favoritesList li img {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+#favoritesList li .remove-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  padding: 0.25rem;
+  cursor: pointer;
+}

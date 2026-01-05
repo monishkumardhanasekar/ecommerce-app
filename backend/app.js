@@ -1,15 +1,21 @@
 const path = require("path");
 
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const app = express();
+
+//  builds the Express application: middleware + routes + error handling.
 
 const errorHandler = require("./middleware/errorHandler");
 const productRoutes = require("./routes/productRoutes");
 
 // Middleware to parse JSON
 app.use(express.json());
+const requestLogger = require("./middleware/requestLogger");
 
+app.use(requestLogger);
+
+// Serve static frontend files
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 // ---------- Health check ----------

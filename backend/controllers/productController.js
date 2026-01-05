@@ -5,6 +5,7 @@ const asyncHandler = require("../middleware/asyncHandler");
 const PAGE_SIZE = 9;
 const mongoose = require("mongoose");
 
+// GET /products -> fetch products with pagination and filtering
 exports.getProducts = asyncHandler(async (req, res) => {
   let { page = 1, brand, type } = req.query;
 
@@ -94,7 +95,7 @@ exports.getProducts = asyncHandler(async (req, res) => {
   });
 });
 
-// GET /products/details/:productId
+// GET /products/details/:productId -> fetch specific product details and related products by brand
 exports.getProductDetails = asyncHandler(async (req, res) => {
   const { productId } = req.params;
 
@@ -145,6 +146,7 @@ exports.favoriteProduct = asyncHandler(async (req, res) => {
   });
 });
 
+// ----------Unfavorite a product ----------
 // DELETE /products/favorite/:productId
 exports.unfavoriteProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;

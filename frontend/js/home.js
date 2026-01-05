@@ -1,4 +1,4 @@
-console.log("HOME JS LOADED");
+// console.log("HOME JS LOADED");
 import { fetchProducts, favoriteProduct, unfavoriteProduct } from "./api.js";
 import { getFavorites, addFavorite, removeFavorite } from "./favorites.js";
 

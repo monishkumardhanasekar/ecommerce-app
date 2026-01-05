@@ -43,7 +43,9 @@ function renderProduct(product) {
   productDetails.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
       <div class="overflow-hidden rounded-lg">
-        <img src="${product.imageUrl}" class="w-full h-96 object-cover rounded-lg" />
+        <img src="${
+          product.imageUrl
+        }" class="w-full h-96 object-cover rounded-lg" />
       </div>
 
       <div>
@@ -57,7 +59,11 @@ function renderProduct(product) {
 
         <div class="mt-6">
           <button id="favoriteBtn" class="heart-btn" aria-pressed="${isFavorited}">
-            ${isFavorited ? '<svg class="heart-icon heart-filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="#ef4444" d="M12 21s-7.5-4.35-10-7.07C-1 9.9 2 5 6 5c1.9 0 3.2 1.1 4 2.09C11.8 6.1 13.1 5 15 5c4 0 7 4.9 4 8.93C19.5 16.65 12 21 12 21z"/></svg>' : '<svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>'}
+            ${
+              isFavorited
+                ? '<svg class="heart-icon heart-filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="#ef4444" d="M12 21s-7.5-4.35-10-7.07C-1 9.9 2 5 6 5c1.9 0 3.2 1.1 4 2.09C11.8 6.1 13.1 5 15 5c4 0 7 4.9 4 8.93C19.5 16.65 12 21 12 21z"/></svg>'
+                : '<svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>'
+            }
           </button>
         </div>
       </div>

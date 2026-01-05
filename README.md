@@ -99,12 +99,7 @@ Create a `.env` file inside `backend/`:
 ```env
 PORT=5001
 MONGO_URI=mongodb://localhost:27017/ecommerce
-FRONTEND_URL=http://localhost:5500
 ```
-
-> `FRONTEND_URL` is used for CORS configuration.
-
-- In the frontend/config.js: fix the BASE_URL as per your backend url.
 
 ---
 
@@ -161,12 +156,10 @@ http://localhost:5001
 
 ## Run the Frontend
 
-Open `frontend/index.html` in the Broswe:
-
-Frontend URL:
+Open `http://localhost:5001` in the Broswe:
 
 ```
-http://localhost:5500
+http://localhost:5001
 ```
 
 ---

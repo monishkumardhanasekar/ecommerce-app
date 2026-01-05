@@ -1,3 +1,5 @@
+const path = require("path");
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -8,15 +10,7 @@ const productRoutes = require("./routes/productRoutes");
 // Middleware to parse JSON
 app.use(express.json());
 
-// ---------- CORS (env-based, production-grade) ----------
-const allowedOrigin = process.env.FRONTEND_URL;
-
-app.use(
-  cors({
-    origin: allowedOrigin,
-    credentials: true,
-  })
-);
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 // ---------- Health check ----------
 app.get("/health", (req, res) => {
@@ -25,6 +19,18 @@ app.get("/health", (req, res) => {
 
 // ---------- Routes ----------
 app.use("/products", productRoutes);
+
+// Frontend fallback: redirect browser requests on unsupported routes
+app.use((req, res, next) => {
+  const acceptsHTML =
+    req.headers.accept && req.headers.accept.includes("text/html");
+
+  if (acceptsHTML) {
+    return res.redirect("/");
+  }
+
+  next();
+});
 
 // ---------- 404 handler ----------
 app.use((req, res, next) => {
